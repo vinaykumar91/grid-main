@@ -98,7 +98,28 @@
     }
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-    @media only screen and (min-width:1000px),(orientation:landscape){
+    @media only screen and (orientation: landscape) {
+      .grid-container{
+        display: grid;
+        height:100vw;
+        width:100%;
+        grid-template-columns: 24% 24% 24% 24%;
+        grid-template-rows:25% 25% 25%;
+        gap:1em;
+        padding:10px;
+        background-color: rgb(244, 246, 248);
+        margin-left: -0.2em;
+      }
+      .item7{
+        background-color:hsl(31, 66%, 93%);
+        height:35vw;
+      }
+      .item8{
+        background-color:hsl(39, 100%, 71%);
+        height:43vw;
+      }
+    }
+    @media only screen and (min-width:1000px),(orientation: landscape) {
       .grid-container{
         grid-template-rows: 30% 30% 32%;
         gap:0.7em;
