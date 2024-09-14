@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Bento grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      padding: 0px;
+      margin:0px;
+      box-sizing: border-box;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 700;
+    }
+    .grid-container{
+      display: grid;
+      height:100vh;
+      width:100%;
+      grid-template-columns: 24% 24% 24% 24%;
+      grid-template-rows:25% 25% 25%;
+      gap:1em;
+      padding:10px;
+      background-color: rgb(244, 246, 248);
+      margin-left: -0.2em;
+    }
+    .grid-container>div{
+      border-radius: 10px;
+      align-items: center;
+      font-size: 18px;
+      overflow: hidden;
+      padding:2vw;
+      align-content: center;
+    }
+    .item1{
+      grid-column-start: 2;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      background-color: hsl(256, 67%, 59%);
+      font-weight: 500;
+      
+      text-align: center;
+    }
+    .item2{
+      grid-column-start: 2;
+      grid-column-end: 3;
+      background-color: hsl(0, 0%, 100%);
+    }
+    .item3{
+      grid-column-start: 3;
+      grid-column-end: 4;
+      background-color:hsl(39, 100%, 71%);
+    }
+    .item4{
+      grid-column-start: 4;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      background-color: hsl(254, 88%, 90%);
+      font-weight: 100;
+    }
+    .item5{
+      grid-column-start: 3;
+      grid-column-end: 5;
+      background-color:hsl(256, 67%, 59%);
+      display:inline-flex;
+    }
+    .item6{
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      background-color:hsl(0, 0%, 100%);
+    }
+    .item7{
+      grid-row-start: 1;
+      grid-row-end: 2;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      background-color:hsl(31, 66%, 93%);
+      height:35vh;
+    }
+    .item8{
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      background-color:hsl(39, 100%, 71%);
+      height:43vh;
+      margin-top:-111px;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    @media only screen and (min-width:1000px){
+      .grid-container{
+        grid-template-rows: 30% 30% 32%;
+        gap:0.7em;
+      }
+      .item1{
+        padding:10%;
+      }
+      .text1{
+        font-size: 3.2em; color:white;font-weight:500;line-height: 0.8;margin-bottom: 0.1em;
+      }
+      .text1 span{
+        font-size: 1em;color:hsl(39, 100%, 71%);font-weight:500;
+      }
+      .text-type-same1{
+        font-size:1.95em;
+        letter-spacing:-1px ;
+        line-height: 0.8;
+        font-weight: 600;
+        margin-bottom: 0.3em;
+      }
+      .image2{
+        height:3.5em;
+        width:150%;
+        margin-top: -0.8em;
+      }
+      .text2{
+        margin-top: -0.3em;
+      }
+      .text4{
+        margin:0.2em 0em 0.2em 0em;
+        font-size:1.7em;
+        letter-spacing:-1px ;
+        line-height: 0.9;
+        font-weight: 700;
+      }
+      .image4{
+        height:11em;
+        width:180%;
+        margin:0.2em 0em;
+        object-fit: fill;
+      }
+      .item5 img{
+        height:120%; 
+        width:100%;
+        margin:0em 2em;
+      }
+      .text5{
+        height: 150%;
+        max-width : 50%; 
+        font-size: 2em ;
+        margin-top: 20%;
+        color:white;
+        font-weight: 500;
+        line-height: 0.9;
+      }
+      p.text6{
+        font-size: 3rem;
+        margin-bottom: 0.2em;
+        margin-top: -0.3em;
+      }
+      p.sametext{
+        font-size: 1.1vw;color:black; font-weight:500;
+      }
+      .image6{
+        width:100%;
+        height: 55%;
+        margin-top: 0.3em;
+        margin-left:0.3em;
+        margin-right:0.3em;
+
+      }
+      
+      .text-type-same2{
+        font-size:2em;
+        letter-spacing:-1.5px ;
+        line-height: 0.9;
+        font-weight: 500;
+      }
+      .item7{
+        height:40vh;
+      }
+      .item8{
+        margin-top: -7em;
+        height:50vh;
+      }
+      .text7{
+        margin:-0.4em 0em 0em 0.3em;
+      }
+      .image7-8{
+        height:auto;
+        width: 90%;
+        margin-top: 0.6em;
+      }
+      .image7{
+        margin-top: 1em;
+        height:5em;
+        width:70%;
+        margin-left: 0.5em;
+      }
+    }
+    @media only screen and (min-width:475px) and (max-width:1000px)
+    {
+      .text1{
+        font-size: 2em; color:white;font-weight:500;line-height: 0.9;margin-bottom: 0.2em;
+      }
+      .text1 span{
+        font-size: 1em;color:hsl(39, 100%, 71%);font-weight:500;
+      }
+      .image2{
+        height:3em;
+        width:150%;
+      }
+      .text4{
+        margin:1.25em 0em 5em 0em;
+        font-size:1.2em;
+        letter-spacing:-1px ;
+        line-height: 0.9;
+        font-weight: 600;
+      }
+      .image4{
+        height:10em;
+         width:180%;
+         margin:0.25em 0em;
+        object-fit: fill;
+      }
+      .item5 img{
+        height:100%; 
+        max-width:55%;
+      }
+      .text5{
+        height: 120%;
+        max-width : 50%; 
+        font-size: 1.25em ;
+        margin-top: 20%;
+        color:white;
+        font-weight: 400;
+        line-height: 0.9;
+      }
+      p.text6{
+        font-size: 2rem;
+        margin-bottom: 0.3em;
+      }
+      p.sametext{
+        font-size: 1.6vw;color:black; font-weight:500;
+      }
+      .image6{
+        width:100%;
+        height: auto;
+        margin-top: 1em;
+      }
+      .text-type-same1{
+        font-size:1.2em;
+        letter-spacing:-1px ;
+        line-height: 0.9;
+        font-weight: 600;
+        margin-bottom: 0.3em;
+      }
+      .text-type-same2{
+        font-size:1.6em;
+        letter-spacing:-1px ;
+        line-height: 0.9;
+        font-weight: 500;
+      }
+      .text7{
+        margin: 0.3em 0em 0.3em -0.3em;
+      }
+      .image7-8{
+        height:auto;
+        width: 100%;
+        margin-top: 1em;
+      }
+    }
+    @media only screen and (max-width:450px)
+    {
+      .grid-container{
+        display: grid;
+        overflow:auto;
+        width:100%;
+        grid-template-columns: 30% 30% 30%;
+        grid-template-rows:30% 30% 30% 50% 50%;
+        gap:1em;
+        padding:10px;
+        row-gap: 1.5em;
+        background-color: rgb(244, 246, 248);
+      }
+      .grid-container>div{
+        border-radius: 10px;
+        align-items: center;
+        font-size: 18px;
+        overflow: hidden;
+        padding:1vw;
+        align-content: center;
+      }
+      .item1{grid-area:1/1/2/3}
+      .item2{grid-area:2/1/3/2}
+      .item3{grid-area:2/2/3/3}
+      .item4{grid-area:1/3/3/4}
+      .item5{grid-area:3/2/4/4}
+      .item6{grid-area:3/1/4/2}
+      .item7{grid-area:4/1/5/4}
+      .item8{
+        grid-area:5/1/6/4;
+        margin-top: -50px;
+        height:45vh;
+      }
+
+      .text1{
+        font-size: 1.13em; color:white;font-weight:500;line-height: 0.9;margin-bottom: 0.2em;
+      }
+      .text1 span{
+        font-size: 1em;color:hsl(39, 100%, 71%);font-weight:500;
+      }
+      .image2{
+        height:2.5em;
+        width:160%;
+      }
+      .image3{
+        margin-bottom: -8vh;
+        height:5em;
+      }
+      .text4{
+        margin:1.25em 0em 5em 0em;
+        font-size:1.2em;
+        letter-spacing:-1px ;
+        line-height: 0.9;
+        font-weight: 600;
+      }
+      .image4{
+        height:10em;
+        width:130%;
+        margin:0.25em 1em;
+        object-fit:fill;
+      }
+      .item5 img{
+        height:92%; 
+        max-width:56%;
+        margin-top: 1em;
+      }
+      .text5{
+        height: 100%;
+        max-width : 50%; 
+        font-size: 1.1em ;
+        margin-top: 40%;
+        margin-left: -5px;
+        color:white;
+        font-weight: 400;
+        line-height: 0.9;
+      }
+      p.text6{
+        font-size: 1.7rem;
+        margin-top:0.6em ;
+        margin-bottom: 0.9em;
+      }
+      p.sametext{
+        font-size: 3vw;color:black; font-weight:500;
+      }
+      .image6{
+        width:100%;
+        height: auto;
+        margin-top: 2em;
+        
+      }
+      .text-type-same1{
+        font-size:1em;
+        letter-spacing:-1.5px ;
+        line-height: 0.9;
+        font-weight: 500;
+        margin-bottom: 0.3em;
+      }
+      .text-type-same2{
+        font-size:1.5em;
+        letter-spacing:-1px ;
+        line-height: 0.9;
+        font-weight: 500;
+        margin:30px 40px;
+      }
+      
+      .image7-8{
+        height:5em;
+        width: 50%;
+        object-fit: contain;
+        margin:0em 0em 0em 4em;
+      }
+      .image8{
+        height:8em;
+        width:70%;
+        object-fit: contain;
+        margin: 0em 0em 0em 2em;
+      }
+      .text8{
+        margin-right: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="grid-container">
+      <div class="item1">
+        <p class="text1">Social Media <span >10X</span> <span style="color: white;font-style:italic">Faster</span> with AI</p>
+        <img src="./assets/images/illustration-five-stars.webp" alt="five-stars" height="20vw" width="120vw" />
+        <p class="sametext" style="color:white">Over 4,000 5-star reviews</p>
+      </div>
+
+      <div class="item2">
+        <img class="image2" src="./assets/images/illustration-multiple-platforms.webp" alt="multiple-platforms" />
+        <p class="text-type-same1 text2">Manage multiple accounts and platforms.</p>
+      </div>
+
+      <div class="item3">
+        <p class="text-type-same1">Maintain a consistent posting schedule.</p>
+        <img class="image3" src="./assets/images/illustration-consistent-schedule.webp" alt="multiple-platforms" height="100em" width="100%"  />
+
+      </div>
+
+      <div class="item4">
+        <p class="text-type-same1 text4">Schedule to social media.</p>
+        <img class="image4" src="./assets/images/illustration-schedule-posts.webp" alt="best time to post" height="160em" width="180%" />
+        <p class="sametext" >Optimize post timings to publish content at the perfect time for your audience.</p>
+      </div>
+      
+      <div class="item5">
+        <img src="./assets/images/illustration-grow-followers.webp" alt="grow followers" />
+        <p class="text5" >Grow followers with non-stop content.</p>
+      </div>
+
+      <div class="item6">
+        <p class="text6">>56%</p>
+        <p class="sametext">faster audience growth</p>
+        <img class="image6" src="./assets/images/illustration-audience-growth.webp" alt="audience growth"/>
+      </div>
+      
+      <div class="item7">
+        <p class="text-type-same2 text7">Create and schedule content <span style="color:hsl(256, 67%, 59%);font-style:italic">quicker</span>.</p>
+        <img class="image7-8 image7" src="./assets/images/illustration-create-post.webp" alt="create post">
+      </div>
+
+      <div class="item8">
+        <p class="text-type-same2 text7 text8">Write your content using AI.</p>
+        <img class="image7-8 image8" src="./assets/images/illustration-ai-content.webp" alt="">
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+      Coded by <a href="#">vinay</a>.
+    </div>
+  </main>
+</body>
+</html>
